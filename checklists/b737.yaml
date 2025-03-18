@@ -1,0 +1,25 @@
+"Boeing 737-800 - Normal Checklists":
+
+  preflight:
+    - Circuit Breakers - CHECKED
+    - Oxygen - TESTED
+    - Fire Detection - TESTED
+    - Window Heat - ON
+    - Hydraulics - CHECKED
+    - Parking Brake - SET
+    - Fuel Quantity - CHECKED
+
+  before start:
+    - Flight Deck Door - CLOSED
+    - Fuel - QUANTITY CONFIRMED
+    - Passenger Briefing - COMPLETED
+    - MCP - SET
+    - Taxi/Takeoff Briefing - COMPLETED
+    - Anti-Collision Light - ON
+
+  after start:
+    - Engine Instruments - CHECKED
+    - Generators - ON
+    - Probe Heat - ON
+    - Anti-Ice - AS REQUIRED
+    - APU - OFF

@@ -1,0 +1,27 @@
+"Cessna 172 - Normal Checklists":
+
+  before engine start:
+    - Preflight Inspection - COMPLETE
+    - Passenger Briefing - COMPLETE
+    - Seats, Belts - ADJUST/FASTENED
+    - Fuel Shutoff Valve - ON
+    - Circuit Breakers - CHECK IN
+    - Avionics - OFF
+    - Electrical Equipment - OFF
+
+  engine start:
+    - Brakes - SET
+    - Mixture - RICH
+    - Carb Heat - OFF
+    - Prime - AS REQUIRED
+    - Throttle - OPEN 1/4 INCH
+    - Prop Area - CLEAR
+    - Master Switch - ON
+
+  before taxi:
+    - Flaps - UP
+    - Avionics - ON
+    - Lights - AS REQUIRED
+    - Engine Instruments - CHECK
+    - Radios - SET
+    - Altimeter - SET

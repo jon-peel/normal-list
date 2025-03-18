@@ -1,0 +1,31 @@
+"Airbus A320 - Normal Checklists":
+
+  cockpit preparation:
+    - Circuit Breakers - CHECKED
+    - Gear Pins and Covers - REMOVED
+    - Fuel Quantity - CHECK
+    - Battery - ON
+    - External Power - AS RQRD
+    - APU Master Switch - ON
+    - ADIRS - NAV
+    - Parking Brake - SET
+    - Windows/Doors - CLOSED/ARMED
+    - Seatbelts - On
+    - Baro. Ref. - _SET (both)
+
+  before start:
+    - Fuel Quantity - CHECK
+    - T.O. Data - SET
+    - T.O. Briefing - COMPLETED
+    - ECAM Status - CHECKED
+    - Flight Controls - CHECKED
+    - Ground Equipment - REMOVED
+    - Parking Break - _
+    - T.O. Speeds & Thrust - _ (both)
+
+  after start:
+    - Anti-Ice - AS RQRD
+    - ECAM Status - CHECKED
+    - Flight Controls - FREE & CORRECT
+    - Rudder Trim - ZERO
+    - Flight Instruments - CHECKED

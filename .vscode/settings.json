@@ -1,0 +1,14 @@
+{
+    "github.copilot.chat": {
+        "codeGeneration.instructions": [
+            {
+                "file": "./docs/spec.md"
+            }
+        ],
+        "commitMessageGeneration.instructions": [
+            {
+                "text": "Use conventional commit message format."
+            }
+        ],
+    }
+}
