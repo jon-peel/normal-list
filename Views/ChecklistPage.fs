@@ -37,11 +37,11 @@ let private renderSection section =
     ]
 
 let renderChecklist (checklist: Checklist) =
-    let titleParts = checklist.Title.Split(" - ")
-    let mainTitle = titleParts.[0]
-    let secondaryTitle = if titleParts.Length > 1 then titleParts.[1] else ""
+    // let titleParts = checklist.Title.Split(" - ")
+    // let mainTitle = titleParts.[0]
+    // let secondaryTitle = if titleParts.Length > 1 then titleParts.[1] else ""
     
-    SharedLayout.pageLayout checklist.Title [
+    SharedLayout.pageLayout ( sprintf "%s - %s" checklist.Title checklist.SubTitle) [
         div [_class "row mb-4"] [
             div [_class "col-md-6"] [
                 h1 [] [str mainTitle]
