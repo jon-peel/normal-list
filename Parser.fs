@@ -5,6 +5,7 @@ open System.IO
 open Domain
 
 let private parseTitle (line: string) =
+    let line = line.TrimEnd(':')  // Add this line to trim the colon
     let parts = line.Trim([|'"'|]).Split([|" - "|], StringSplitOptions.None)
     match parts with
     | [|title; subtitle|] -> (title, subtitle)

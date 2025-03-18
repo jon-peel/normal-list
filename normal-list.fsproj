@@ -11,6 +11,7 @@
     <Compile Include="Views/SharedLayout.fs" />
     <Compile Include="Views/CheckListPage.fs" />
     <Compile Include="Views/IndexPage.fs" />
+    <Compile Include="Logging.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

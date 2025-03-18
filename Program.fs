@@ -1,14 +1,14 @@
 open System
 open System.IO
 open Giraffe.ViewEngine
-
+open Logging
 
 let openChcecklist filePath = 
     let checklist = Parser.parseYamlFile filePath
     checklist
 
-
 let processChecklist checklist =    
+    logChecklistGeneration checklist
     let page = Views.CheckListPage.render checklist
     let outputPath = Path.Combine("html", checklist.Slug + ".html")
     let html = RenderView.AsString.htmlDocument page
@@ -44,11 +44,17 @@ let generateSite outputPath =
         processChecklist file
     copyWwwRoot outputPath
 
+let ensureHtmlDirectory() =
+    let htmlDir = Path.Combine(Directory.GetCurrentDirectory(), "html")
+    if not (Directory.Exists(htmlDir)) then
+        Directory.CreateDirectory(htmlDir) |> ignore
+
 [<EntryPoint>]
 let main args =
     try
+        ensureHtmlDirectory()
         generateSite "html"
-        printfn "Successfully generated HTML files"
+        logComplete()
         0
     with
     | ex ->
