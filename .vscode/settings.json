@@ -1,14 +1,12 @@
 {
-    
-        "github.copilot.chatcodeGeneration.instructions": [
-            {
-                "file": "./docs/spec.md"
-            }
-        ],
-        "github.copilot.chatcommitMessageGeneration.instructions": [
+    "github.copilot.chat.codeGeneration.instructions":  [
+        {
+            "file": "./docs/spec.md"
+        }
+    ],
+    "github.copilot.chat.commitMessageGeneration.instructions": [
             {
                 "text": "Use conventional commit message format."
             }
-        ],
-    
+        ],    
 }
