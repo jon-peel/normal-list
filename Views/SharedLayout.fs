@@ -30,15 +30,31 @@ let private disclaimer =
         str "These checklists are for simulation purposes only and should not be used for real-world aviation."
     ]
 
+let private footer =
+    footer [_class "footer mt-auto py-3 bg-light"] [
+        div [_class "container"] [
+            div [_class "row"] [
+                div [_class "col-12 text-center"] [
+                    p [] [
+                        str "Found an issue or have a request? Please "
+                        a [_href "https://github.com/jon-peel/normal-list"] [str "report it on GitHub"]
+                        str ". Pull requests are welcome!"
+                    ]
+                ]
+            ]
+        ]
+    ]
+
 let pageLayout title content =
     html [_lang "en"] [
         headSection title
-        body [] [
+        body [_class "d-flex flex-column min-vh-100"] [
             navigationBar
-            div [_class "container my-4"] [
+            div [_class "container my-4 flex-grow-1"] [
                 disclaimer
                 main [] content
             ]
+            footer
             script [
                 _src "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             ] []
