@@ -5,6 +5,12 @@
 This is a small application.
 It will read a series of YAML files and generate aircraft normal checklists for each YAML file.
 
+### Index
+
+An `index.html` should be generated at run time.
+it should hold a disclaimer that says none of these checklists should be used for real world aviation.
+It should have a link to each of the generated checklists.
+
 ### YAML checklists
 
 Aircraft Normal Checklists are defined in YAML files, and stored in the `checklists` directory, e.g.

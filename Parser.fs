@@ -39,7 +39,7 @@ let parseYamlFile (filePath: string) : Checklist =
             match indent, trimmedLine with
             | 0, title when title.StartsWith("\"") ->
                 let (mainTitle, subTitle) = parseTitle trimmedLine
-                parseLines { Title = mainTitle; SubTitle = subTitle; Sections = [] } rest
+                parseLines { Title = mainTitle; SubTitle = subTitle; Sections = [];  Slug = Path.GetFileNameWithoutExtension(filePath) } rest
                 
             | 2, section when section.EndsWith(":") ->
                 let sectionName = section.TrimEnd(':').Trim([|'"'|])
@@ -56,7 +56,7 @@ let parseYamlFile (filePath: string) : Checklist =
                 
             | _ -> parseLines state rest
     
-    let result = parseLines { Title = ""; SubTitle = ""; Sections = [] } (lines |> Array.toList)
+    let result = parseLines { Title = ""; SubTitle = ""; Sections = []; Slug = Path.GetFileNameWithoutExtension(filePath) } (lines |> Array.toList)
     { result with 
         Sections = result.Sections 
                   |> List.rev 

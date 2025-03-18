@@ -14,4 +14,5 @@ type Checklist = {
     Title: string
     SubTitle: string
     Sections: ChecklistSection list
+    Slug: string
 }

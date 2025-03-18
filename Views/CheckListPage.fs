@@ -1,4 +1,4 @@
-module View
+module Views.CheckListPage
 
 open Giraffe.ViewEngine
 open Domain
