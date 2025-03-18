@@ -35,30 +35,11 @@ let private renderTitle (title: string) =
     | _ -> h1 [ _class "mb-4" ] [ str title ]
 
 let render (checklist: Checklist) =
-    html [] [
-        head [] [
-            title [] [ str checklist.Title ]
-            link [ 
-                _rel "stylesheet"
-                _href "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-            ]
-            style [] [ 
-                str """
-                    .dotted-line {
-                        border-bottom: 1px dotted #999;
-                        display: block;
-                        margin: 0 80px;
-                        height: 1em;
-                    }
-                """
-            ]
-        ]
-        body [] [
+     SharedLayout.pageLayout checklist.Title [
             div [ _class "container mt-4" ] [
                 renderTitle checklist.Title
                 div [ _class "row d-flex flex-wrap" ] [
                     yield! checklist.Sections |> List.map renderSection
                 ]
-            ]
-        ]
+            ]        
     ]

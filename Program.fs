@@ -20,14 +20,34 @@ let generateIndex checklists =
     let indexPath = Path.Combine("html", "index.html")
     File.WriteAllText(indexPath, RenderView.AsString.htmlDocument html)
 
+let copyWwwRoot outputPath =
+    let wwwrootPath = Path.Combine(__SOURCE_DIRECTORY__, "wwwroot")
+    if Directory.Exists(wwwrootPath) then
+        let rec copyDir source dest =
+            Directory.CreateDirectory(dest) |> ignore
+            
+            for file in Directory.GetFiles(source) do
+                let destFile = Path.Combine(dest, Path.GetFileName(file))
+                File.Copy(file, destFile, true)
+                
+            for dir in Directory.GetDirectories(source) do
+                let destDir = Path.Combine(dest, Path.GetFileName(dir))
+                copyDir dir destDir
+                
+        copyDir wwwrootPath outputPath
+
+let generateSite outputPath =
+    let checklistFiles = Directory.GetFiles("checklists", "*.yaml")
+    let checkLists = checklistFiles |> Seq.map openChcecklist |> Seq.toList
+    generateIndex checkLists
+    for file in checkLists do
+        processChecklist file
+    copyWwwRoot outputPath
+
 [<EntryPoint>]
 let main args =
     try
-        let checklistFiles = Directory.GetFiles("checklists", "*.yaml")
-        let checkLists = checklistFiles |> Seq.map openChcecklist |> Seq.toList
-        generateIndex checkLists
-        for file in checkLists do
-            processChecklist file
+        generateSite "html"
         printfn "Successfully generated HTML files"
         0
     with
